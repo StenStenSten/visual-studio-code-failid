@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8"> -->
+    <!-- proovi, mis juhtub, kui kirjutad ascii asemel "UTF-8" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekstid 3</title>
+    <style>
+        html {
+            font-size: 22px;
+            /* 
+            Default font-size ehk 1 rem on alati 16px kui ei ole määratud teisiti; 
+            Seega 1rem = 16px; 2rem = 32px, 2.4rem = 38,4px;
+            kui muudad siin kirja suuruseks nt 12 px, siis 1rem = 12px ja 2rem = 24px;
+            */
+        }
+
+        body {
+            background: #ededed;
+            font-size: 18px;
+            font-family: 'Lucida Sans Regular', Courier, monospace;
+            /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+            /*font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 100;
+            font-weight: 400;
+            font-weight: bold;
+            font-weight: lighter;
+            font-weight: bolder;
+            font-style: italic;
+            /* oblique - kaldesse pandud regular, italic - fondi failis kursiivis font */
+            /* font-variant: small-caps; */
+            /* font-variant-ligatures: historical-ligatures; */
+            /* font-kerning: normal; */
+            font-stretch: condensed;
+            /* kliki brauseri dev. toolsis neid ridu ükshaaval sisse-välja ja vaata, mida need teevad*/
+        }
+
+        .rem {
+            font-size: 1.2rem;
+            /* proovi, mis juhtub teise lõigu teksti suurusega kui muudad html elemendi font-size suurust */
+        }
+
+        .rem h2 {
+            font-size: 2rem;
+
+        }
+
+        /* muuda teksti suurust siin kasutades em ühikuid ja vaata, mis muutub */
+        .em {
+            font-size: 2em;
+        }
+
+        .em h2 {
+            font-size: 1.4em;
+        }
+
+        .em p {
+            font-size: 0.8em;
+        }
+
+        /* https://www.w3schools.com/charsets/ref_emoji.asp */
+        @counter-style space-counter {
+            system: cyclic;
+            symbols: "\1F44D";
+            suffix: " ";
+        }
+
+        @counter-style checkmark {
+            system: cyclic;
+            symbols: "\2705";
+            suffix: " ";
+        }
+
+        li.a {
+            text-align: left;
+            list-style-type: space-counter;
+
+        }
+
+        ul.a {
+            text-align: left;
+            list-style-type: checkmark;
+        }
+
+
+
+
+        li {
+            text-align: left;
+
+        }
+
+        .paketid {
+            display: flex;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .pakett {
+            background: white;
+            border: 1px solid lightgreen;
+            flex: 1;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .starter {
+            margin-right: 1rem;
+        }
+
+        #rcorners {
+            border-radius: 25px;
+            border: 2px solid green;
+            padding: 20px;
+            width: 200px;
+            height: 1px;
+        }
+
+        #box {
+            border: 1px solid blue;
+            padding: 40px;
+            margin: 1px;
+        }
+        .strikethrough-text{
+            text-decoration: line-through;
+        }
+        .starter-telli{
+            border-radius: 25px;
+            border: 2px solid black;
+            padding: 20px;
+            width: 200px;
+            height: 10px;
+        }
+        .business-telli{
+            border-radius: 25px;
+            padding: 20px;
+            width: 200px;
+            height: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="paketid">
+        <div class="pakett starter">
+            <h2>Starter</h2>
+            <p>esimene aasta</p>
+            <p>44 €</p>
+            <div class="strikethrough-text">norm. 7,34€+KM</div>
+            <ul class="a">
+                <li>16gb</li>
+                <li>privaatne postkast</li>
+                <li>oma IP aadress</li>
+            </ul>
+            <p>See pakett sobib hästi kui alustad oma esimese kodulehe tegemist ning soovid ennast Internetis nähtavaks
+                teha.</p>
+                <button class="starter-telli">Telli</button>
+            <p>30-päevane garantii</p>
+            <p>Kehtib ainult veebimajutuse baaspaketile</p>
+        </div>
+        <div class="pakett business">
+            <ol>
+                <ol id="rcorners">
+                    <li class="a">kõige populaarsem</li>
+
+                </ol>
+                <h2>Business</h2>
+                <p>esimene aasta</p>
+                <p>44 €</p>
+                <div class="strikethrough-text">norm. 12,94€+KM</div>
+                <ul class="a">
+                    <li>24gb</li>
+                    <li>privaatne postkast</li>
+                    <li>oma IP aadress</li>
+                </ul>
+
+            </ol>
+            <div id="box">
+                <p>Kindel valik kasvava e-äri püstihoidmiseks, suurem maht veebile ja e-postile ning rohkem samaaegseid
+                    veebikülastajaid</p>
+                <button class="business-telli">Telli</button>
+                <p>30-päevane raha tagasi garantii</p>
+                <p>Kehtib ainult veebimajutuse baaspaketile</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
